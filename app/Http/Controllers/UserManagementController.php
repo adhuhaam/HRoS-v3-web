@@ -38,7 +38,7 @@ class UserManagementController extends Controller
     public function listAgentsAndClients()
     {
         $agents = User::role('agent')->get();
-        $clients = User::role('clients')->get(); // assuming role is called 'clients'
+        $clients = User::role('client')->get();
 
         return view('settings.viewagentsandclients', compact('agents', 'clients'));
     }

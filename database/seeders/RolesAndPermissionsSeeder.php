@@ -35,8 +35,8 @@ class RolesAndPermissionsSeeder extends Seeder
             'employee' => [],
             'management' => ['view employees'],
             'reception' => ['view employees'],
-            'agents' => [],
-            'clients' => [],
+            'agent' => [],
+            'client' => [],
             'guest' => [],
         ];
 

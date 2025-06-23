@@ -23,8 +23,8 @@ class DatabaseSeeder extends Seeder
             'supervisor',
             'employee',
             'reception',
-            'agents',
-            'clients',
+            'agent',
+            'client',
             'guest'
         ];
 

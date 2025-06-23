@@ -18,10 +18,10 @@ class DashboardController extends Controller
             'employee'    => 'dashboard.employee',
             'reception'   => 'dashboard.reception',
             'guest'       => 'dashboard.guest',
-            'agent'       => 'dashboard.agent',
+            'agent'       => 'dashboard.agents',
             'supervisor'  => 'dashboard.supervisor',
             'management'  => 'dashboard.management',
-            'clients'     => 'dashboard.clients',
+            'client'      => 'dashboard.clients',
         ];
 
         foreach ($dashboards as $role => $view) {

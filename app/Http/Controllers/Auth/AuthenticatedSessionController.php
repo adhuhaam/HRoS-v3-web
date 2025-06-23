@@ -27,32 +27,7 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
         $request->session()->regenerate();
 
-        $user = Auth::user();
-
-        // Redirect based on user role
-        if ($user->hasRole('super admin')) {
-            return redirect()->route('dashboard');
-        } elseif ($user->hasRole('hr manager')) {
-            return redirect()->route('dashboard');
-        } elseif ($user->hasRole('hr staff')) {
-            return redirect()->route('dashboard');
-        } elseif ($user->hasRole('manager')) {
-            return redirect()->route('dashboard');
-        } elseif ($user->hasRole('supervisor')) {
-            return redirect()->route('dashboard');
-        } elseif ($user->hasRole('employee')) {
-            return redirect()->route('dashboard');
-        } elseif ($user->hasRole('reception')) {
-            return redirect()->route('dashboard');
-        } elseif ($user->hasRole('agent')) {
-            return redirect()->route('dashboard');
-        } elseif ($user->hasRole('clients')) {
-            return redirect()->route('dashboard');
-        } elseif ($user->hasRole('guest')) {
-            return redirect()->route('dashboard');
-        }
-
-        // Fallback if no valid role is found
+        // All roles currently use the same dashboard route
         return redirect()->route('dashboard');
     }
 
