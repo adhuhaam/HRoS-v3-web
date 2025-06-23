@@ -18,8 +18,8 @@ class LoginResponse implements LoginResponseContract
             $user->hasRole('supervisor') => '/supervisor/dashboard',
             $user->hasRole('employee') => '/employee/dashboard',
             $user->hasRole('reception') => '/reception/dashboard',
-            $user->hasRole('agents') => '/agents/dashboard',
-            $user->hasRole('clients') => '/clients/dashboard',
+            $user->hasRole('agent') => '/agent/dashboard',
+            $user->hasRole('client') => '/client/dashboard',
             $user->hasRole('guest') => '/guest/dashboard',
             default => '/',
         };
