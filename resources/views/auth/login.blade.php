@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 
 <x-head />
 
@@ -72,8 +72,8 @@
 
                             <!-- Theme toggle -->
                             <div class="text-center my-4">
-                                <button type="button" class=" bg-neutral-900 btn  rounded-m shadow-m mt-6" data-theme-toggle></button>
-                                Light/Dark
+                                <button type="button" class="bg-neutral-900 btn rounded-m shadow-m mt-6" data-theme-toggle>
+                                    Light/Dark
                                 </button>
                             </div>
 
@@ -115,14 +115,7 @@
 
         initializePasswordToggle(".toggle-password");
 
-        // Theme toggle
-        document.getElementById("theme-toggle").addEventListener("click", function() {
-            const body = document.body;
-            const html = document.documentElement;
-            body.classList.toggle("bg-dark");
-            body.classList.toggle("text-white");
-            html.classList.toggle("dark");
-        });
+        // Password field toggle initialized above
 
     </script>';
     @endphp
