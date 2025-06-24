@@ -49,6 +49,12 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 - **[byte5](https://byte5.de)**
 - **[OP.GG](https://op.gg)**
 
+## Sidebar Access Control
+
+The sidebar items are configured in `config/sidebar.php`. Each entry defines
+the required roles or permissions needed to view a module. Users lacking the
+specified roles or permissions will not see the menu item in the sidebar.
+
 ## Contributing
 
 Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).

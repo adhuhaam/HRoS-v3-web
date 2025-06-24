@@ -27,54 +27,27 @@
 
             <li class="sidebar-menu-group-title">Application</li>
 
-            @can('view employees')
-            <li>
-                <a href="{{ route('employees.index') }}">
-                    <iconify-icon icon="mdi:account-group-outline" class="menu-icon"></iconify-icon>
-                    <span>Employees</span>
-                </a>
-            </li>
-            @endcan
+            @php($modules = config('sidebar'))
+            @foreach($modules as $module)
+                @php
+                    $show = true;
+                    if(isset($module['permission'])) {
+                        $show = $show && auth()->user()->can($module['permission']);
+                    }
+                    if(isset($module['roles'])) {
+                        $show = $show && auth()->user()->hasAnyRole($module['roles']);
+                    }
+                @endphp
+                @if($show)
+                    <li>
+                        <a href="{{ $module['route'] !== '#' ? route($module['route']) : '#' }}">
+                            <iconify-icon icon="{{ $module['icon'] }}" class="menu-icon"></iconify-icon>
+                            <span>{{ $module['label'] }}</span>
+                        </a>
+                    </li>
+                @endif
+            @endforeach
 
-            {{-- Example: Only show HR Manager module to users with that permission --}}
-            @can('view hr dashboard')
-            <li>
-                <a href="{{ route('hr.dashboard') }}">
-                    <iconify-icon icon="mdi:briefcase-account-outline" class="menu-icon"></iconify-icon>
-                    <span>HR Dashboard</span>
-                </a>
-            </li>
-            @endcan
-
-            {{-- Additional modules with permission checks --}}
-            @can('access email')
-            <li>
-                <a href="#">
-                    <iconify-icon icon="mage:email" class="menu-icon"></iconify-icon>
-                    <span>Email</span>
-                </a>
-            </li>
-            @endcan
-
-            @can('access chat')
-            <li>
-                <a href="#">
-                    <iconify-icon icon="bi:chat-dots" class="menu-icon"></iconify-icon>
-                    <span>Chat</span>
-                </a>
-            </li>
-            @endcan
-
-            @can('access calendar')
-            <li>
-                <a href="#">
-                    <iconify-icon icon="solar:calendar-outline" class="menu-icon"></iconify-icon>
-                    <span>Calendar</span>
-                </a>
-            </li>
-            @endcan
-
-            {{-- Add more module entries below using @can(...) --}}
         </ul>
     </div>
 </aside>
