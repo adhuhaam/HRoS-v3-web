@@ -5,18 +5,19 @@
 
 <body class="transition bg-light text-dark">
 
-    <section class="auth d-flex flex-wrap min-vh-100">
+    <section class="py-5 d-flex align-items-center min-vh-100">
         <div class="container">
-            <div class="row g-5 h-100">
-                <!-- Left Auth Image -->
-                <div class="col-max d-none d-lg-flex justify-content-center align-items-center bg-white">
-                    <img src="{{ asset('assets/images/auth/auth-img.png') }}" alt="Auth Image" class="img-fluid w-100 h-100 object-fit-cover rounded-3" />
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10 bg-white rounded-3 shadow overflow-hidden">
+                    <div class="row g-0">
+                        <!-- Left Auth Image -->
+                        <div class="col-lg-6 d-none d-lg-flex justify-content-center align-items-center bg-light-subtle">
+                            <img src="{{ asset('assets/images/auth/auth-img.png') }}" alt="Auth Image" class="img-fluid w-100 h-100 object-fit-cover">
+                        </div>
 
-                </div>
-
-                <!-- Right Login Section -->
-                <div class="col-max d-flex flex-column justify-content-center px-5 py-4 bg-body-secondary">
-                    <div class="mx-auto w-100" style="max-width: 100%;">
+                        <!-- Right Login Section -->
+                        <div class="col-lg-6 p-4 p-sm-5 bg-body-secondary d-flex flex-column justify-content-center">
+                            <div class="mx-auto w-100" style="max-width: 100%;">
                         <div class="text-center mb-5">
                             <a href="{{ route('login') }}" class="d-inline-block mb-4">
                                 <img src="{{ asset('assets/images/logo.svg') }}" alt="Logo" width="250px" class="img-fluid" style="max-width: 220px;">
@@ -65,7 +66,7 @@
                                     <input class="form-check-input" type="checkbox" id="remember" name="remember">
                                     <label class="form-check-label" for="remember">Remember me</label>
                                 </div>
-                                <a href="#" class="text-decoration-none text-primary small">Forgot Password?</a>
+                                <a href="{{ route('password.request') }}" class="text-decoration-none text-primary small">Forgot Password?</a>
                             </div>
 
                             <button type="submit" class="btn btn-primary w-100">Sign In</button>
@@ -87,12 +88,19 @@
                                 </button>
                             </div>
 
+                            <div class="text-center">
+                                <span class="small">Don't have an account?</span>
+                                <a href="{{ route('register') }}" class="text-decoration-none text-primary small">Create one</a>
+                            </div>
+
 
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    </div>
     </section>
 
     @php
