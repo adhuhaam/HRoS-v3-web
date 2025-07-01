@@ -27,7 +27,9 @@
 
             <li class="sidebar-menu-group-title">Application</li>
 
-            @php($modules = config('sidebar'))
+            @php
+                $modules = config('sidebar');
+            @endphp
             @foreach($modules as $module)
                 @php
                     $show = true;
